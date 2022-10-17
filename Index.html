@@ -1,0 +1,257 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sistema de Inscripcion</title>
+    <!-- Booststrap -->
+    <link rel="stylesheet" href="Assets/CSS/lib/Boostrap/bootstrap.min.css" />
+    <!-- CSS custom -->
+    <link rel="stylesheet" href="Assets/CSS/style.css" />
+    <!-- Toastr -->
+    <link rel="stylesheet" href="Assets/CSS/lib/toastr/toastr.min.css" />
+    <!-- Jquery Confirmation -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
+  </head>
+  <body>
+    <div id="container" class="container">
+
+      <div id="form" class="m-3 mx-md-auto">
+        <div class="row mb-2">
+            <div class="col-8 col-md-8 offset-2 border border-light border-opacity-25  bg-light">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item active mt-1" aria-current="page">Datos personales</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+        <div class="row">
+          <div class="col-8 col-md-8 offset-2">           
+            <div class="card">
+              <div class="card-header text-white bg-dark">
+                <h4 class="text-center">Selección de materias</h4>
+              </div>
+              <div class="card-body m-1">
+                <div class="card-title">
+                  <h4 class="p-1 ps-0">Complete los datos personales</h4>
+                </div>
+                <div class="mb-3">
+                  <label for="name" class="form-label">Nombre:</label>
+                  <input type="text" class="form-control" id="name" />
+                </div>
+                <div class="mb-3">
+                  <label for="province" class="form-label">Provincia:</label>
+                  <input type="text" class="form-control" id="province" />
+                </div>
+                <div class="mb-3">
+                  <label for="city" class="form-label">Ciudad:</label>
+                  <input type="text" class="form-control" id="city" />
+                </div>
+                <div class="mb-3">
+                  <label for="sector" class="form-label">Sector:</label>
+                  <input type="text" class="form-control" id="sector" />
+                </div>
+                <div class="mb-3">
+                  <label for="street" class="form-label">Calle:</label>
+                  <input type="text" class="form-control" id="street" />
+                </div>
+                <div class="mb-3">
+                  <label for="career" class="form-label">Carrera:</label>
+                  <select class="form-select" id="career">
+                    <option value="" selected>Seleccione una carrera:</option>
+                    <option value="1">Software</option>
+                    <option value="2">Ciberseguridad</option>
+                    <option value="3">Ciencia & Analita de los datos</option>
+                  </select>
+                </div>
+                <button
+                  type="button"
+                  class="btn btn-outline-primary float-end"
+                  id="btn-save"
+                >
+                  Guardar
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-outline-warning float-end me-1"
+                  id="btn-clear"
+                >
+                  Limpiar
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Seleccion de materia 
+        <div id="SelectionMats">
+          <div  class="m-3 mx-md-auto">
+            <div class="row mb-2">
+              <div class="col-8 col-md-8 offset-2 border border-light border-opacity-25 bg-light">
+                <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                  <ol class="breadcrumb">
+                    <li id="LoadForm" class="breadcrumb-item mt-1"><a href="#"> Datos personales</a></li>
+                    <li class="breadcrumb-item active mt-1" aria-current="page">Seleccion de materia</li>
+                  </ol>
+                </nav>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-8 col-md-8 offset-2">           
+              <div class="card">
+                <div class="card-header text-white bg-dark">
+                  <h4 class="text-center">Selección de materias</h4>
+                </div>                     
+                  <div class="m-3">
+                    <div class="accordion accordion-flush" id="accordion-software">
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-heading-programacion-I">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse-programacion-1" aria-expanded="false" aria-controls="flush-collapseOne">
+                            Porgramacion 1
+                          </button>
+                        </h2>
+                        <div id="flush-collapse-programacion-1" class="accordion-collapse collapse" aria-labelledby="flush-heading-programacion-I" data-bs-parent="#accordion-software">
+                          <div class="accordion-body text-center">                                                                      
+                            <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="radio" name="programacion-I" id="programacion-I-lunes">
+                              <label class="form-check-label fs-7" for="programacion-I-lunes">
+                                Lunes 6:00PM - 10:00PM
+                              </label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="radio" name="programacion-I" id="programacion-I-martes">
+                              <label class="form-check-label fs-7" for="programacion-I-martes">
+                                Martes 6:00PM - 10:00PM
+                              </label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="radio" name="programacion-I" id="programacion-I-miercoles">
+                              <label class="form-check-label fs-7" for="programacion-I-miercoles">
+                                Miercoles 6:00PM - 10:00PM
+                              </label>
+                            </div>                          
+                          </div>
+                        </div>
+                      </div>                    
+                    </div>
+                  </div>
+                  <button
+                    type="button"
+                    class="btn btn-outline-warning float-end"
+                    id="btn-next"
+                  >
+                    Avanzar
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      -->
+      <!-- <div id="Confirmation">
+        <div class="row mb-2">
+          <div class="col-8 col-md-8 offset-2 border border-light border-opacity-25  bg-light">
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li id="LoadForm" class="breadcrumb-item mt-1"><a href="#"> Datos personales</a></li>
+                    <li class="breadcrumb-item mt-1"><a href="#">Seleccion de materia</a></li>
+                    <li class="breadcrumb-item active mt-1" aria-current="page">Confirmacion</li>
+                </ol>
+              </nav>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-8 col-md-8 offset-2">    
+            <div class="card">
+              <div class="card-header bg-info">
+                Confirmacion de datos
+              </div>
+              <div class="card-body">
+                <h5 class="card-title fw-bolder">Informacion</h5>
+                <hr class="bg-info">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">Nombre</li>
+                  <li class="list-group-item">Provincia</li>
+                  <li class="list-group-item">Ciudad</li>
+                  <li class="list-group-item">Sector</li>
+                  <li class="list-group-item">Calle</li>
+                  <li class="list-group-item">Carrera</li>
+                </ul>
+              <div class="col-12 col-md-12">
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th scope="col">Asignatura</th>
+                      <th scope="col">Lunes</th>
+                      <th scope="col">Martes</th>
+                      <th scope="col">Miercoles</th>
+                      <th scope="col">Jueves</th>
+                      <th scope="col">Viernes</th>
+                      <th scope="col">Sabado</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">Programacion I</th>
+                      <td></td>
+                      <td colspan="6">@fat</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Programacion II</th>
+                      <td>Jacob</td>
+                      <td>Thornton</td>
+                      <td>@fat</td>
+                      <td>Jacob</td>
+                      <td>Thornton</td>
+                      <td>@fat</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Programacion III</th>
+                      <td>Jacob</td>
+                      <td>Thornton</td>
+                      <td>@fat</td>
+                      <td>Jacob</td>
+                      <td>Thornton</td>
+                      <td>@fat</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Fundamento de programacion</th>
+                      <td>Jacob</td>
+                      <td>Thornton</td>
+                      <td>@fat</td>
+                      <td>Jacob</td>
+                      <td>Thornton</td>
+                      <td>@fat</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Base de datos</th>
+                      <td>Jacob</td>
+                      <td>Thornton</td>
+                      <td>@fat</td>
+                      <td>Jacob</td>
+                      <td>Thornton</td>
+                      <td>@fat</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+                <div class="text-end">
+                  <button id="btn-finish" class="btn btn-outline-success ">Finalizacion</button>
+                </div>
+              </div>
+            </div>
+          </div>          
+        </div>
+      </div> -->
+    </div>
+    <script src="Assets/Js/lib/Jquery/jquery-3.6.1.min.js"></script>
+    <script src="Assets/Js/lib/Boostrap/bootstrap.bundle.min.js"></script>
+    <script src="Assets/Js/helper.js"></script>
+    <script src="Assets/Js/lib/Toastr/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
+    <script src="Assets/Js/Index/Index.js"></script>
+  </body>
+</html>
